@@ -112,7 +112,7 @@ body {
   z-index:2; 
   max-width:1100px; 
   margin:0 auto; 
-  padding:2rem 1.5rem 6rem; /* dagdag na bottom space para sa footer */
+  padding:2rem 1.5rem 6rem;
 }
 
 /* ─── HEADER ─── */
@@ -175,7 +175,7 @@ header p {
   transition:transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s;
   animation:cardIn 0.5s cubic-bezier(.16,1,.3,1) both;
   border:1px solid rgba(0,0,0,0.05);
-  margin-bottom:1.5rem; /* maliit na space sa pagitan ng cards */
+  margin-bottom:1.5rem;
 }
 .card:hover {
   transform:translateY(-4px);
@@ -295,7 +295,7 @@ header p {
 }
 .store-btn.na:hover { transform:none; filter:none; box-shadow:none; }
 
-/* ─── COLOR THEMING per rank (gold 1-7, silver 8-14, bronze 15-20) ─── */
+/* ─── COLOR THEMING ─── */
 .theme-gold .accent-bar { background:linear-gradient(90deg, var(--gold), var(--gold-shine), var(--gold)); }
 .theme-gold .platform-name { color: var(--gold); text-shadow:0 1px 4px rgba(212,175,55,0.3); }
 .theme-gold .rank-badge { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#fff; box-shadow:0 2px 8px rgba(212,175,55,0.35); }
@@ -323,14 +323,14 @@ header p {
 /* ─── FOOTER ─── */
 footer {
   position: relative;
-  z-index: 10; /* mas mataas kesa sa bg-layer at gems */
+  z-index: 100;
   background: #ffffff;
   border-top: 2px solid #D4AF37;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
   text-align: center;
   font-size: 0.85rem;
   color: #1a1a1a;
-  margin-top: 3rem; /* sapat na space mula sa last card */
+  margin-top: 4rem;
   width: 100%;
 }
 </style>
@@ -348,7 +348,7 @@ footer {
   <!-- HEADER -->
   <header>
     <h1>◆ Top 20 Social Media Platforms ◆</h1>
-    <p>Ranked by Monthly Active Users &amp; IP / Market Valuations · Feb 2026</p>
+    <p>Ranked by Monthly Active Users & IP / Market Valuations · Feb 2026</p>
   </header>
 
   <!-- DROPDOWN -->
@@ -363,8 +363,24 @@ footer {
 </div>
 
 <footer>
-  <p style="margin:0 0 0.6rem 0;letter-spacing:0.5px;font-size:0.9rem;"><strong style="color:#1a1a1a;">Ren Rivera</strong> · 📱 <a href="tel:+639649927262" style="color:#D4AF37;text-decoration:none;font-weight:600;">+63 964 992 7262</a> · 🌐 <a href="https://www.patreon.com/c/Myredgarnet" target="_blank" style="color:#D4AF37;text-decoration:none;font-weight:600;">Support on Patreon</a></p>
-  <p style="margin:0;font-size:0.75rem;color:#666;">© 2026 Top Social Media Platforms Directory · Data: Public Filings & Market Sources</p>
+  <div class="footer-content">
+    <div class="footer-left">
+      <h3>Support This Directory</h3>
+      <a href="https://www.patreon.com/c/Myredgarnet" target="_blank" class="patreon-btn">
+        ⭐ Support on Patreon
+      </a>
+    </div>
+    <div class="footer-right">
+      <div class="contact-name">Ren Rivera</div>
+      <div class="contact-details">
+        <span>📱 Telegram/WhatsApp: <a href="tel:+639649927262">+63 964 992 7262</a></span>
+        <span>🌐 Website: <a href="https://www.patreon.com/c/Myredgarnet" target="_blank">patreon.com/c/Myredgarnet</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Top Social Media Platforms Directory · Data compiled from public filings & market sources</p>
+  </div>
 </footer>
 
 <script>
@@ -385,7 +401,7 @@ const LOGOS = {
   discord: `<svg viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>`,
   threads: `<svg viewBox="0 0 24 24" fill="#000000"><path d="M19.938 10.126c-.39-1.806-1.727-3.26-3.547-3.984-.928-.376-1.945-.534-2.946-.453-.718.056-1.422.26-2.072.582-.65.322-1.233.763-1.713 1.296-.48.532-.852 1.15-1.095 1.824-.243.674-.353 1.393-.323 2.118.03.725.2 1.438.499 2.101.298.664.723 1.264 1.249 1.764.526.5 1.147.889 1.829 1.142.682.253 1.41.365 2.134.328.724-.037 1.436-.21 2.088-.499.652-.289 1.238-.694 1.723-1.188.485-.495.858-1.074 1.093-1.712.235-.637.332-1.316.282-1.99-.05-.674-.249-1.331-.564-1.927h-1.096zm-1.414 3.648c-.153.502-.51.914-.976 1.167-.465.253-1.005.334-1.528.226-1.147-.265-1.956-1.253-1.998-2.427-.042-1.173.692-2.211 1.805-2.556.513-.167 1.072-.152 1.576.043.504.195.929.54 1.203 1.002.274.461.392 1.002.33 1.528-.027.236-.08.468-.162.690-.081.222-.196.428-.345.613-.148.185-.326.345-.528.469-.203.124-.424.205-.657.234v.011z"/></svg>`,
   weibo: `<svg viewBox="0 0 24 24" fill="#E6002C"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.459 16.809c-.726 1.532-2.424 2.618-4.459 2.618-3.13 0-5.665-2.535-5.665-5.665 0-2.035 1.086-3.733 2.618-4.459.426-.202.929-.408 1.52-.608-1.053 1.064-1.665 2.514-1.665 4.117 0 2.68 2.149 4.828 4.828 4.828 1.603 0 3.053-.612 4.117-1.665-.2.591-.406 1.094-.608 1.52-.248.496-.473.905-.686 1.314zm-3.297-7.276c-2.176 0-3.944 1.768-3.944 3.944s1.768 3.943 3.944 3.943 3.943-1.767 3.943-3.943-1.767-3.944-3.943-3.944z"/></svg>`,
-  douyin: `<svg viewBox="0 0 24 24" fill="#010101"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05 6.27 6.27 0 0 0-6.27 6.27 6.27 6.27 0 0 0 6.27 6.27 6.27 6.27 0 0 0 6.27-6.27V8.58a8.13 8.13 0 0 0 4.74 1.52V6.69a4.83 4.83 0 0 1-1.91.0z"/></svg>`,
+  viber: `<svg viewBox="0 0 24 24" fill="#7360F2"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.617 6.124 20.34h.005l-.004 2.416s-.037.98.61 1.177c.777.236 1.234-.5 1.98-1.302.407-.44.97-1.084 1.397-1.58 3.85.323 6.812-.416 7.152-.525.785-.252 5.228-.816 5.948-6.645.742-6.01-.36-9.82-2.343-11.513C18.596-.257 14.747-.05 11.4 0z"/></svg>`,
   qq: `<svg viewBox="0 0 24 24" fill="#00B4D8"><path d="M13.954 4.332c-3.976 0-7.34 2.378-7.34 5.316 0 1.647.98 3.115 2.513 4.014-.27.878-.618 2.054-.79 2.54-.255.73.193.712.469.521.276-.191 1.592-.988 2.267-1.401.281.039.574.06.873.06 3.976 0 7.34-2.378 7.34-5.316S17.93 4.332 13.954 4.332z"/></svg>`,
   bluesky: `<svg viewBox="0 0 24 24" fill="#0085ff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c.828 0 1.5.672 1.5 1.5S12.828 7.5 12 7.5 10.5 6.828 10.5 6s.672-1.5 1.5-1.5zM8.25 19.5a.75.75 0 0 1-.75-.75V12c0-.414.336-.75.75-.75h.375V9.75a3.375 3.375 0 0 1 6.75 0v1.5H16.5c.414 0 .75.336.75.75v6.75a.75.75 0 0 1-.75.75H8.25z"/></svg>`,
   mastodon: `<svg viewBox="0 0 24 24" fill="#6364FF"><path d="M23.678 12.923c0 3.287-2.777 5.937-6.201 5.937-.341 0-.676-.023-1.002-.069-.483.867-1.297 1.558-2.313 1.873a2.76 2.76 0 0 1-.772.107c-1.525 0-2.76-1.234-2.76-2.76 0-.152.012-.302.037-.446-.33.069-.68.107-1.04.107-3.424 0-6.201-2.65-6.201-5.937C3.424 9.636 6.201 7 9.625 7h4.575c3.424 0 6.201 2.636 6.201 5.923 0 .339-.03.672-.082.998l.359.002z"/></svg>`,
@@ -409,7 +425,7 @@ const platforms = [
   { id:'discord', name:'Discord', rank:13, users:'200M', valuation:'~$15B', owner:'Discord Inc.', note:'Est. private valuation', appleUrl:'https://apps.apple.com/app/discord-talk-play-hang-out/id985746746', googleUrl:'https://play.google.com/store/apps/details?id=com.discord' },
   { id:'threads', name:'Threads', rank:14, users:'160M', valuation:'$1.87T', owner:'Meta Platforms', note:'Parent co market cap', appleUrl:'https://apps.apple.com/app/threads-an-instagram-app/id6446901002', googleUrl:'https://play.google.com/store/apps/details?id=com.instagram.barcelona' },
   { id:'weibo', name:'Weibo', rank:15, users:'605M', valuation:'~$8B', owner:'Weibo Corp.', note:'Public market cap', appleUrl:'https://apps.apple.com/app/weibo/id350962117', googleUrl:'https://play.google.com/store/apps/details?id=com.sina.weibo' },
-  { id:'douyin', name:'Douyin', rank:16, users:'766M', valuation:'~$500B', owner:'ByteDance', note:'Parent co valuation', appleUrl:null, googleUrl:null },
+  { id:'viber', name:'Viber', rank:16, users:'260M', valuation:'~$900M', owner:'Rakuten (Japan)', note:'Acquired 2014', appleUrl:'https://apps.apple.com/app/viber-messenger-chats-calls/id382617920', googleUrl:'https://play.google.com/store/apps/details?id=com.viber.voip' },
   { id:'qq', name:'QQ', rank:17, users:'558M', valuation:'~$720B', owner:'Tencent Holdings', note:'Parent co market cap', appleUrl:'https://apps.apple.com/app/qq/id444934666', googleUrl:'https://play.google.com/store/apps/details?id=com.tencent.mobileqq' },
   { id:'bluesky', name:'Bluesky', rank:18, users:'30M', valuation:'~$3B', owner:'Bluesky Social', note:'Est. private valuation', appleUrl:'https://apps.apple.com/app/bluesky-social/id6444370199', googleUrl:'https://play.google.com/store/apps/details?id=xyz.blueskyweb.app' },
   { id:'lemon8', name:'Lemon8', rank:19, users:'25M', valuation:'~$500B', owner:'ByteDance', note:'Parent co valuation', appleUrl:'https://apps.apple.com/app/lemon8-lifestyle-community/id1615598558', googleUrl:'https://play.google.com/store/apps/details?id=com.bd.lemon8' },
@@ -445,7 +461,7 @@ function renderCard(p) {
         <svg viewBox="0 0 24 24" fill="#fff"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 10.937 8.635-13.239zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L13.396 12l4.302-3.492zm-13.39 13.39L14.045 12.7l2.302 2.302-10.937 10.937a1 1 0 0 1-1.612-.92z"/></svg>
         Google Play
       </a>`
-    : `<span class="store-btn na">Not Available</span>`;
+    : `<span class="store-btn na">Not Available (China-only app)</span>`;
 
   return `
     <div class="card ${theme}" style="animation-delay:0.05s">
@@ -497,5 +513,6 @@ function showPlatform(idx) {
 // initial: show all
 showPlatform('');
 </script>
+
 </body>
 </html>
